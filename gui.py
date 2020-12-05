@@ -1,0 +1,91 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'twitch_reger.ui'
+#
+# Created by: PyQt5 UI code generator 5.11.3
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(453, 326)
+        MainWindow.setMinimumSize(QtCore.QSize(453, 326))
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_3.setContentsMargins(5, 5, 5, 5)
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.pushButtonStart = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButtonStart.setObjectName("pushButtonStart")
+        self.verticalLayout_3.addWidget(self.pushButtonStart)
+        self.pushButtonStopThreads = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButtonStopThreads.setObjectName("pushButtonStopThreads")
+        self.verticalLayout_3.addWidget(self.pushButtonStopThreads)
+        self.verticalLayout_4.addLayout(self.verticalLayout_3)
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_2.setContentsMargins(5, 5, 5, 5)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setObjectName("label")
+        self.verticalLayout_2.addWidget(self.label)
+        self.label_4 = QtWidgets.QLabel(self.centralwidget)
+        self.label_4.setObjectName("label_4")
+        self.verticalLayout_2.addWidget(self.label_4)
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout_2.addWidget(self.label_2)
+        self.label_3 = QtWidgets.QLabel(self.centralwidget)
+        self.label_3.setObjectName("label_3")
+        self.verticalLayout_2.addWidget(self.label_3)
+        self.verticalLayout_4.addLayout(self.verticalLayout_2)
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setContentsMargins(5, 5, 5, 5)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setObjectName("pushButton")
+        self.horizontalLayout.addWidget(self.pushButton)
+        self.comboBox = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox.setObjectName("comboBox")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.horizontalLayout.addWidget(self.comboBox)
+        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit.setObjectName("lineEdit")
+        self.horizontalLayout.addWidget(self.lineEdit)
+        self.threads_input = QtWidgets.QLineEdit(self.centralwidget)
+        self.threads_input.setObjectName("threads_input")
+        self.horizontalLayout.addWidget(self.threads_input)
+        self.accounts_input = QtWidgets.QLineEdit(self.centralwidget)
+        self.accounts_input.setToolTip("")
+        self.accounts_input.setObjectName("accounts_input")
+        self.horizontalLayout.addWidget(self.accounts_input)
+        self.verticalLayout_4.addLayout(self.horizontalLayout)
+        self.verticalLayout.addLayout(self.verticalLayout_4)
+        MainWindow.setCentralWidget(self.centralwidget)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "TwitchReger by glebgrig0"))
+        self.pushButtonStart.setText(_translate("MainWindow", "Start"))
+        self.pushButtonStopThreads.setText(_translate("MainWindow", "Soft stop"))
+        self.label.setText(_translate("MainWindow", "Accounts:0"))
+        self.label_4.setText(_translate("MainWindow", "Threads:0"))
+        self.label_2.setText(_translate("MainWindow", "Errors:0"))
+        self.label_3.setText(_translate("MainWindow", "Proxies:0"))
+        self.pushButton.setText(_translate("MainWindow", "Choose proxy folder"))
+        self.comboBox.setItemText(0, _translate("MainWindow", "http"))
+        self.comboBox.setItemText(1, _translate("MainWindow", "socks"))
+        self.lineEdit.setText(_translate("MainWindow", "RuCaptcha Key"))
+        self.threads_input.setText(_translate("MainWindow", "Threads"))
+        self.accounts_input.setText(_translate("MainWindow", "Accounts Amount"))
+
