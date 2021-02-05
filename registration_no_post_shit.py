@@ -242,7 +242,7 @@ class Registrtaion:
         if "error_code" in session_result.text:
             open(path+"/errors.txt",'a').write(self.email+":"+self.username+":"+self.password+":"+session_result.text)
             if "Please complete the CAPTCHA correctly" in session_result:
-                requests.post("http://rucaptcha.com/res.php?key="+rucaptcha_key+"&action=reportbad&id="+str(self.recived_captcha_id))
+                requests.post("http://api.captcha.guru/in.php?key="+rucaptcha_key+"&action=reportbad&id="+str(self.recived_captcha_id))
         else:
             file = open(path+"/log_pass.txt",'a')
             file.write('\n' + self.username + ":" + self.password)
@@ -256,7 +256,7 @@ class Registrtaion:
         i=0
         while True:
             try:
-                send_captcha = requests.get("https://rucaptcha.com/in.php?key="+rucaptcha_key+"&method=funcaptcha&publickey="+self.caps_token+"&surl=https://client-api.arkoselabs.com&pageurl=https://www.twitch.tv/signup?no-mobile-redirect=true&json=1",proxies=self.proxy,timeout=timeout)
+                send_captcha = requests.get("http://api.captcha.guru/in.php?key="+rucaptcha_key+"&method=funcaptcha&publickey="+self.caps_token+"&surl=https://client-api.arkoselabs.com&pageurl=https://www.twitch.tv/signup?no-mobile-redirect=true&json=1",proxies=self.proxy,timeout=timeout)
                 break
             except:
                 if i>retries:
@@ -272,7 +272,7 @@ class Registrtaion:
             time.sleep(5)
             print("Ожидаю капчу.")
             try:
-                recived_captcha = requests.get("https://rucaptcha.com/res.php?key="+rucaptcha_key+"&action=get&id="+captcha_id+"&json=1",proxies=self.proxy,timeout=timeout)
+                recived_captcha = requests.get("http://api.captcha.guru/res.php?key="+rucaptcha_key+"&action=get&id="+captcha_id+"&json=1",proxies=self.proxy,timeout=timeout)
             except:
                 continue
             if (recived_captcha.json()["request"] == "ERROR_CAPTCHA_UNSOLVABLE"):
